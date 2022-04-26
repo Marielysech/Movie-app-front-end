@@ -40,3 +40,9 @@ code {
   font-size: 20px;
   font-weight: bold;
 }
+
+.RefineSearchSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
