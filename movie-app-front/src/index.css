@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.App {
+  
+}
+
+.MovieContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-columns: 100px;
+  overflow: hidden;
+}
+
+.MovieContainer img {
+  max-width: 50%;
+}
