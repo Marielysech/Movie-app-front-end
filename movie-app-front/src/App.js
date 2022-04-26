@@ -25,13 +25,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Navbar />
       <h1>
         <a href="http://localhost:3000/">Movie App</a> 
       </h1>
-      
-      {/* <Login /> */}
-      {/* <Searchbar /> */}
+      <Searchbar />
       {/* <Filters /> */}
       <MovieList movies={moviesData}/>
       {/* <Footer /> */}

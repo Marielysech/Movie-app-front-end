@@ -12,10 +12,10 @@ code {
     monospace;
 }
 
-
+/* 
 .App {
   
-}
+} */
 
 .MovieContainer {
   display: grid;
@@ -27,4 +27,16 @@ code {
 
 .MovieContainer img {
   max-width: 50%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer span {
+  margin: 2rem 5rem;
+  font-size: 20px;
+  font-weight: bold;
 }
