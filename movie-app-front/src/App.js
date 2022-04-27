@@ -8,6 +8,7 @@ import MovieList from './components/MovieList'
 import Footer from './components/Footer'
 import moviesData from './movies'
 import RefineSearchSection from './components/RefineSearchSection';
+import Intro from './components/Intro'
 
 function App() {
 
@@ -23,10 +24,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <h1>
-        <a href="http://localhost:3000/">Movie App</a> 
-      </h1>
-      <RefineSearchSection />
+      <Intro />
+      {/* <RefineSearchSection /> */}
       <MovieList movies={moviesData}/>
       {/* <Footer /> */}
 

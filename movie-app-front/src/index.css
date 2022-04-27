@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +10,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFCF2;
+  font-family: 'Lato', sans-serif;;
 }
 
 code {
@@ -12,37 +19,92 @@ code {
     monospace;
 }
 
-/* 
-.App {
-  
-} */
-
-.MovieContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-columns: 100px;
-  overflow: hidden;
-}
-
-.MovieContainer img {
-  max-width: 50%;
-}
-
-.footer {
+.navBar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border: 0.5px solid black;
 }
 
-.footer span {
-  margin: 2rem 5rem;
+.navBar span {
+  /* margin: 1rem 2rem; */
   font-size: 20px;
-  font-weight: bold;
+  padding: 1rem;
+}
+
+/* .introContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  align-content: center;
+} */
+
+.introText {
+  max-width: 100%;
+  margin: 0 auto;
+  margin: 2rem;
+  font-size: 60px;
+  font-family: 'Mukta Vaani', sans-serif;
+}
+
+em {
+  text-decoration: underline;
+  color: #F5AA7C;
 }
 
 .RefineSearchSection {
+  margin: 1rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: .2rem;
+}
+
+.button {
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+background-color: #e9ded7;
+  border: 1px solid black;
+  margin: 0 0.2rem;
+}
+
+
+.MovieContainer {
+  display: grid;
+  margin: 1rem 0;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  overflow: hidden;
+}
+
+.movieTile {
+  font-weight: bold;
+  padding: 1rem 0.5rem;
+  object-fit: cover;
+  border: 0.5px solid black;
+}
+
+.movieTile img {
+  width: 80%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Mukta Vaani', sans-serif;
+  margin: 0.5rem;
+}
+.category {
+  background-color: #F5AA7C;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.736);
+  width: fit-content;
+  margin: 0 auto;
+  color: white;
+  font-family: 'Overpass Mono', monospace;
+}
+
+.category:hover {
+  background-color: #FFFCF2;
+  color: black;
 }

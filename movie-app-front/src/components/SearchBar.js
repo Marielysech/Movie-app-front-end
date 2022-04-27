@@ -1,10 +1,12 @@
+import Button from "./Button"
+
 function SearchBar() {
 
 return (
     <>        
         <form>
             <input placeholder="Search movies here..."></input>
-            <button>Search</button>
+            <Button text="Search" />
         </form>
        
     </>

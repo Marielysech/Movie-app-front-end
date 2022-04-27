@@ -2,7 +2,7 @@ function Button ({text}) {
 
     return (
         <>
-        <button>{text}</button>
+        <button className="button">{text}</button>
         </>
     )
 }
