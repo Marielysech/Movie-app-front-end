@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import MovieTile from './MovieTile';
 import RefineSearchSection from './RefineSearchSection';
-// import firstLetterUpperCase from '../HelperFct.js/inputChanges.ja';
-import Button from './Button';
 
 const MovieList = ({moviesList, setMoviesList}) => {
     
@@ -44,26 +42,18 @@ const MovieList = ({moviesList, setMoviesList}) => {
     useState(() => searchHandler, [value])
 
 //RefineSearchSection.Searchbar
-// const variablesSearchbar = [searchHandler, valueSearch, setValueSearch, captureInputSearch]
+const variablesSearchbar = [searchHandler, value, setValue, captureInputSearch]
 
     return (
         <>
-        <form>
-            <input 
-                placeholder="Search movies here..." 
-                value={value}               
-                onChange={captureInputSearch}
-            ></input>
-            <p>Typed Value: {value}</p>
-            <button className="button" onClick={searchHandler}>
-                search</button>
-        </form>
-        <div className="MovieContainer">
-             {moviesList.map(item => 
-                <MovieTile item={item} />
-            )}
-        </div>
+            <RefineSearchSection allProps={variablesSearchbar}/>
+            <div className="MovieContainer">
+                {moviesList.map(item => 
+                    <MovieTile item={item} />
+                )}
+            </div>
         </>
+        
     )
 }
 

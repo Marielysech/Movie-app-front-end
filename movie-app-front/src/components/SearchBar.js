@@ -1,27 +1,23 @@
 import Button from "./Button"
 import React, {useState, useEffect} from 'react'
 
-function SearchBar({variablesSearchbar}) {
+function SearchBar({allProps}) {
 
-    const [searchHandler, valueSearch, captureInputSearch, setValueSearch] = variablesSearchbar
+    const [searchHandler, value, setValue, captureInputSearch] = allProps
 
-    console.log("here it's the searchbAr")
-    console.log(variablesSearchbar)
 
-    console.log(valueSearch, captureInputSearch, setValueSearch)
 
-const [value, setValue] = useState("")
 return (
-    <>        
+    <>  
         <form>
-            <input 
+             <input 
                 placeholder="Search movies here..." 
-                value={valueSearch}               
+                value={value}               
                 onChange={captureInputSearch}
             ></input>
-            <p>Typed Value: {valueSearch}</p>
             <Button text="Search" onClick={searchHandler}/>
-        </form>
+
+        </form>      
        
     </>
    
