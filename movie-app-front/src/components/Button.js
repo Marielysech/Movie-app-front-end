@@ -1,8 +1,8 @@
-function Button ({text}) {
+function Button ({text, handler}) {
 
     return (
         <>
-        <button className="button">{text}</button>
+        <button className="button" onClick={handler}>{text}</button>
         </>
     )
 }

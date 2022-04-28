@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import React, {useState, useEffect} from 'react'
 import './App.css';
 // import React from 'react'
 import "./index.css"
@@ -12,21 +13,20 @@ import Intro from './components/Intro'
 
 function App() {
 
-// const getMovie = () => {
-//   fetch("LINK FROM BACKEND OR DB") 
-//     .then((res) => res.json())
-//     .then((res) => {
-//       console.log(res)
-//       fetchUsers(res)
-//     })
-// }
+  const [moviesList, setMoviesList] = useState([])
+
+  useEffect( () => {
+  fetch('/movies')
+  .then(response => response.json())
+  .then(data => setMoviesList(data.movies))
+  .catch(err => console.log(err))}, [])
 
   return (
     <div className="App">
       <Navbar />
       <Intro />
-      {/* <RefineSearchSection /> */}
-      <MovieList movies={moviesData}/>
+      {/* <RefineSearchSection movies={moviesList} /> */}
+      <MovieList moviesList={moviesList} setMoviesList={setMoviesList}/>
       {/* <Footer /> */}
 
     </div>

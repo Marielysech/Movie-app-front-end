@@ -70,9 +70,10 @@ background-color: #e9ded7;
 
 .MovieContainer {
   display: grid;
-  margin: 1rem 0;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  margin: 1rem 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   overflow: hidden;
+  justify-content: center;
 }
 
 .movieTile {
