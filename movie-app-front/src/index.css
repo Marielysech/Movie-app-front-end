@@ -108,4 +108,11 @@ background-color: #e9ded7;
 .category:hover {
   background-color: #FFFCF2;
   color: black;
+  cursor: pointer
+}
+
+.homeRedirect {
+  text-decoration: none;
+  color: inherit;
+
 }

@@ -39,6 +39,13 @@ const MovieList = ({moviesList, setMoviesList}) => {
         setValue('')
     }
 
+    function accessCategory (event) {
+        let category = event.target.id
+        console.log(category)
+        const categorySearch = moviesList.filter(item => item.category === category) 
+        setMoviesList(categorySearch) 
+    }
+
     useState(() => searchHandler, [value])
 
 //RefineSearchSection.Searchbar
@@ -49,7 +56,7 @@ const variablesSearchbar = [searchHandler, value, setValue, captureInputSearch]
             <RefineSearchSection allProps={variablesSearchbar}/>
             <div className="MovieContainer">
                 {moviesList.map(item => 
-                    <MovieTile item={item} />
+                   <MovieTile item={item} handler={accessCategory}/>
                 )}
             </div>
         </>
