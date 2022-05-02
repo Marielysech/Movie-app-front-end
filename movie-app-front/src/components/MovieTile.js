@@ -8,7 +8,12 @@ const MovieTile = ({item, handler}) => {
             <img src={item.poster} alt={item.title} />
             <p className="title"> {item.title} </p>
             </NavLink>
-            <p className="category" id={item.category} onClick={handler}> {item.category} </p>
+            
+            <div className="rating">
+                <p >{item.rating}/10</p>
+            </div>
+            <NavLink to='/'>
+            <p className="category" id={item.category} onClick={handler}> {item.category} </p> </NavLink>
          </div>   
     )
 }

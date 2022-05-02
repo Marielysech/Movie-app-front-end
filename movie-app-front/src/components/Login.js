@@ -7,10 +7,7 @@ const Login = () => {
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required></input>
         </div>
-        <div>
-            <label for="username">Username</label>
-            <input type="username" id="username" name="username" required></input>
-        </div>
+       
         <div>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required></input>

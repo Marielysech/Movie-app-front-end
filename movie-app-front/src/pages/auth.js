@@ -7,7 +7,9 @@ const Auth = () => {
     return (
         <>
             <NavBar />
+            <div className="authContainer">
             <Outlet />
+            </div>
             <Footer />
         </>
     )
