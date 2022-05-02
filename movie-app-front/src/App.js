@@ -7,6 +7,7 @@ import Register from './components/Register';
 import Login from './components/Login'
 import Home from './pages/Home';
 import Auth from './pages/Auth';
+import Movie from './pages/Movie'
 
 
 function App() {
@@ -27,8 +28,9 @@ function App() {
                 <Route path="/home" element={<Home moviesList={moviesList} setMoviesList={setMoviesList}/>}/>
                 <Route path="/auth/*" element={<Auth />} >
                     <Route path="login" element={<Login/>} />
-                    <Route path="auth/register" element={<Register/>} />
+                    <Route path="register" element={<Register/>} />
                 </Route>
+                <Route path='movies/:id' element={<Movie />} />
               </Routes>
             </main>
           </Router>
