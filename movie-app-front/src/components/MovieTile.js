@@ -4,7 +4,7 @@ const MovieTile = ({item, handler}) => {
     
     return (
         <div className="movieTile">
-            <NavLink to='/movies'>
+            <NavLink to={`/movies/${item.title}`}>
             <img src={item.poster} alt={item.title} />
             <p className="title"> {item.title} </p>
             </NavLink>

@@ -8,6 +8,7 @@ import Login from './components/Login'
 import Home from './pages/Home';
 import Auth from './pages/Auth';
 import Movie from './pages/Movie'
+import NotFound from './pages/Notfound';
 
 
 function App() {
@@ -25,12 +26,13 @@ function App() {
           <Router>
             <main>
               <Routes>
-                <Route path="/home" element={<Home moviesList={moviesList} setMoviesList={setMoviesList}/>}/>
+                <Route path="/" element={<Home moviesList={moviesList} setMoviesList={setMoviesList}/>}/>
                 <Route path="/auth/*" element={<Auth />} >
                     <Route path="login" element={<Login/>} />
                     <Route path="register" element={<Register/>} />
                 </Route>
-                <Route path='movies/:id' element={<Movie />} />
+                <Route path="movies/:movieId" element={<Movie moviesList={moviesList} setMoviesList={setMoviesList} />} />
+                <Route path="*" element={<NotFound />}></Route>
               </Routes>
             </main>
           </Router>

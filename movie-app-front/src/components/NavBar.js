@@ -7,8 +7,8 @@ const NavBar = () => {
   return (
       <div className="navBar">
 
-          <span><NavLink to='/home' ><i class="fa-solid fa-house"></i></NavLink></span>
-          <span><NavLink className='homeRedirect' to='/home' >Movie Finder</NavLink></span>
+          <span><NavLink to='/' ><i class="fa-solid fa-house"></i></NavLink></span>
+          <span><NavLink className='homeRedirect' to='/' >Movie Finder</NavLink></span>
           <span><NavLink className="auth" to="/auth/login" ><i class="fa-solid fa-arrow-right-to-bracket"></i></NavLink>
           <NavLink className="auth" to="/auth/register"><i class="fa-solid fa-circle-plus"></i></NavLink></span>
 
