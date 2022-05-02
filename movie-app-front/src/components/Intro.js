@@ -1,4 +1,3 @@
-import img from '../assets/oldTV.jpg'
 import React, {useState} from 'react'
 
 const Intro = () => {
