@@ -8,6 +8,7 @@ import Login from './components/Login'
 import Home from './pages/Home';
 import Auth from './pages/Auth';
 
+
 function App() {
 
   const [moviesList, setMoviesList] = useState([])
@@ -24,9 +25,9 @@ function App() {
             <main>
               <Routes>
                 <Route path="/home" element={<Home moviesList={moviesList} setMoviesList={setMoviesList}/>}/>
-                <Route path='/auth/*' element={<Auth />} >
-                    <Route path='login' element={<Login/>} />
-                    <Route path='register' element={<Register/>} />
+                <Route path="/auth/*" element={<Auth />} >
+                    <Route path="login" element={<Login/>} />
+                    <Route path="auth/register" element={<Register/>} />
                 </Route>
               </Routes>
             </main>
