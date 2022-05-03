@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 
 
-const Home = ({moviesList, setMoviesList}) => {
+const Home = ({moviesList, setMoviesList, supressFilter, initialMovieList}) => {
 
 
 return (
@@ -12,7 +12,7 @@ return (
     
     <NavBar />
     <Intro />
-    <MovieList moviesList={moviesList} setMoviesList={setMoviesList}/>
+    <MovieList moviesList={moviesList} setMoviesList={setMoviesList} initialMovieList={initialMovieList}/>
     <Footer />
     
     </>

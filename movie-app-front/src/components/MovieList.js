@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react'
 import MovieTile from './MovieTile';
 import RefineSearchSection from './RefineSearchSection';
 
-const MovieList = ({moviesList, setMoviesList}) => {
-    
+const MovieList = ({moviesList, setMoviesList, initialMovieList}) => {
     //RefineSearchSection.Searchbar
     const [value, setValue] = useState('')
 
@@ -24,15 +23,15 @@ const MovieList = ({moviesList, setMoviesList}) => {
 
         if (isNaN(value)) {
             //filtering movies per category
-            const categorySearch = moviesList.filter(item => item.category === valueSearchCapital) 
+            const categorySearch = initialMovieList.filter(item => item.category === valueSearchCapital) 
             //filtering movies per title
-            const titleSearch = moviesList.filter(item => item.title.includes(valueSearchCapital))
+            const titleSearch = initialMovieList.filter(item => item.title.includes(valueSearchCapital))
             categorySearch.length > 0 && setMoviesList(categorySearch) 
             titleSearch.length >0 && setMoviesList(titleSearch)
             setValue('')
 
         }   //filtering per years
-        const yearSearch = moviesList.filter(item => item.year == valueSearchCapital)
+        const yearSearch = initialMovieList.filter(item => item.year == valueSearchCapital)
         console.log('this is year' + yearSearch)
 
         yearSearch.length > 0 && setMoviesList(yearSearch)
