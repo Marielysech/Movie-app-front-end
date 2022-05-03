@@ -2,6 +2,7 @@ import {NavLink} from 'react-router-dom'
 
 const NavBar = () => {
 
+  
   //TO DO: LOGIN COMPONENT  {/* <Login /> */}
 
   return (

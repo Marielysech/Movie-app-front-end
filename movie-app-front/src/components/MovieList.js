@@ -5,7 +5,7 @@ import RefineSearchSection from './RefineSearchSection';
 const MovieList = ({moviesList, setMoviesList, initialMovieList}) => {
     //RefineSearchSection.Searchbar
     const [value, setValue] = useState('')
-
+    
     function firstLetterUpperCase(str) {
         let splitStr = str.toLowerCase().split(' ');
         for (let i = 0; i < splitStr.length; i++) {
@@ -18,7 +18,6 @@ const MovieList = ({moviesList, setMoviesList, initialMovieList}) => {
     
     function searchHandler (event) {
         event.preventDefault();
-        console.log('this is la putain de value' + value)
         const valueSearchCapital = firstLetterUpperCase(value)
 
         if (isNaN(value)) {
@@ -30,12 +29,20 @@ const MovieList = ({moviesList, setMoviesList, initialMovieList}) => {
             titleSearch.length >0 && setMoviesList(titleSearch)
             setValue('')
 
-        }   //filtering per years
-        const yearSearch = initialMovieList.filter(item => item.year == valueSearchCapital)
+
+
+        }  //filtering per years
+        const yearSearch = initialMovieList.filter(item => item.year === valueSearchCapital)
         console.log('this is year' + yearSearch)
 
         yearSearch.length > 0 && setMoviesList(yearSearch)
         setValue('')
+    }
+
+    function resetHandler (event) {
+        event.preventDefault();
+        setMoviesList(initialMovieList)
+        
     }
 
     function accessCategory (event) {
@@ -48,13 +55,13 @@ const MovieList = ({moviesList, setMoviesList, initialMovieList}) => {
     useState(() => searchHandler, [value])
 
 //RefineSearchSection.Searchbar
-const variablesSearchbar = [searchHandler, value, setValue, captureInputSearch]
+const variablesSearchbar = [searchHandler, value, setValue, captureInputSearch, resetHandler]
 
     return (
         <>
             <RefineSearchSection allProps={variablesSearchbar}/>
             <div className="MovieContainer">
-                {moviesList.map(item => 
+            {moviesList.map(item => 
                    <MovieTile item={item} handler={accessCategory}/>
                 )}
             </div>
