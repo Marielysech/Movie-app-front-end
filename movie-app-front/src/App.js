@@ -16,18 +16,19 @@ function App() {
   const [moviesList, setMoviesList] = useState([])
   const [initialML, setInitialML] = useState([])
  
-  function fetchMovies() {
+  function getMovies() {
     fetch('/movies')
     .then(response => response.json())
     .then(data => {
       const movies= data.movies
       setMoviesList(movies) 
       setInitialML(movies) 
+    })
     .catch(err => console.log(err))
-  })
+  
 }
 
-useEffect( () => {fetchMovies()}, [])
+useEffect( () => {getMovies()}, [])
 
   return (
     <div className="App">
