@@ -23,7 +23,7 @@ const Login = () => {
     return (
         <>
         <h1>Login</h1>
-        <form action="/auth/login" method="post">
+        <form >
         <div>
             <label for="email">Email</label>
             <input placeholder="Enter your email here" value={emailValue} onChange={(e) => setemailValue(e.target.value)}></input>
