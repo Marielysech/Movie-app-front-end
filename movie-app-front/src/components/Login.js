@@ -21,12 +21,11 @@ const Login = () => {
           };
     
           fetch('/auth/login', requestOptions)
-          .then(res => {
-            res.json()})
+          .then(res =>res.json())
             // if(res.status === 200) navigate('/', {replace:true})})
           .then(data => {
             console.log(data)
-            user.setUser({name: data.name, email:data.email})
+            // user.setUser({name: data.name, email:data.email})
             setemailValue("")
             setpasswordValue("")
         })

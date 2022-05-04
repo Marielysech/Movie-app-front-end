@@ -1,17 +1,16 @@
 import React, {useState} from 'react'
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, } from 'react-router-dom';
 
 
 
-const Register = ({user, setUser}) => {
+const Register = () => {
     const navigate = useNavigate();
 
     const [nameValue, setnameValue] = useState();
     const [emailValue, setemailValue] = useState();
     const [passwordValue, setpasswordValue] = useState();
 
-    const registerUser = (e) => {
-        e.preventDefault();
+    const registerUser = (event) => {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -22,12 +21,13 @@ const Register = ({user, setUser}) => {
           .then(res => {if(res.status === 200) navigate('/auth/login', {replace:true})})
           .then(data => {
               console.log(data.name + 'has been created')
-              setUser(data)  
-            });
-
-          setnameValue("");
-          setemailValue("");
-          setpasswordValue("");
+              setnameValue("");
+              setemailValue("");
+              setpasswordValue("");
+            })
+          .catch(error => console.log(error))
+          event.preventDefault();
+  
 
     }
 

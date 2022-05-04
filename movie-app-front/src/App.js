@@ -1,8 +1,7 @@
+import './App.css';
+import "./index.css"
 import React, {useState, useEffect, useRef} from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import './App.css';
-// import React from 'react'
-import "./index.css"
 import Register from './components/Register';
 import Login from './components/Login'
 import Home from './pages/Home';
@@ -37,9 +36,9 @@ useEffect( () => {getMovies()}, [])
 
   return (
     <div className="App">
+        <UserContextProvider user={{userInfo, setUserInfo}}>
           <Router>
             <main>
-            <UserContextProvider user={{userInfo, setUserInfo}}>
               <Routes>
                 <Route path="/" element={<Home moviesList={moviesList} setMoviesList={setMoviesList} initialMovieList={initialML}/>}/>
                 <Route path="/auth/*" element={<Auth />} >
@@ -52,9 +51,9 @@ useEffect( () => {getMovies()}, [])
                 <Route path="favorites" element={<FavoritesMovies />} />
                 <Route path="*" element={<NotFound />}/>
               </Routes>
-              </UserContextProvider> 
             </main>
           </Router>
+          </UserContextProvider> 
      
 
     </div>
