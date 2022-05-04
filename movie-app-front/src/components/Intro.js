@@ -19,7 +19,7 @@ const [movieQuotes, setMQuotes] = useState("")
 // 	.catch(err => console.error(err));
 
     return (
-        <div className='introContainer'>            <div><h2 className='introText'>Install yourself, pick a movie, and <em>enjoy</em></h2></div>
+        <div className='introContainer'>            <div><h2 className='introText'>Install yourself, pick a movie, go watch it and <em>enjoy</em></h2></div>
         </div>
     )
 }
