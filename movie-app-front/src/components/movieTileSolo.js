@@ -7,7 +7,7 @@ const MovieTileSolo = ({item, handler}) => {
             
             <img src={item.poster} alt={item.title} />
             <p className="title"> {item.title} </p>
-            <p>{item.plot}</p>
+            <p><em>Synopsis</em> : {item.plot}</p>
             <div className="rating">
                 <p >{item.rating}/10</p>
             </div>

@@ -158,16 +158,20 @@ background-color: #e9ded7;
 }
 
 .movieTileSolo {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   font-weight: bold;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0rem;
   object-fit: cover;
   border: 0.5px solid black;
+  margin: 1rem 2rem;
 }
 
 .movieTileSolo img {
-  width: 100%;
+  width: 40%;
+}
+
+.movieTileSolo p {
+  margin: 1rem auto;
+  padding: 0.3rem 2rem;
 }
 
 .footer {
@@ -302,4 +306,7 @@ height: 50%;
 
 .userLinkContainer {
   padding: 1rem;
+  display: flex;
+  align-items: baseline;
+
 }

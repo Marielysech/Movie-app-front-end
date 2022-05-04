@@ -1,21 +1,29 @@
 import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom';
 
-const Register = () => {
+
+
+const Register = ({user, setUser}) => {
+    const navigate = useNavigate();
 
     const [nameValue, setnameValue] = useState();
     const [emailValue, setemailValue] = useState();
     const [passwordValue, setpasswordValue] = useState();
 
-    const registerUser = (name, email, password) => {
+    const registerUser = (e) => {
+        e.preventDefault();
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: name, email: email, password: password })
+            body: JSON.stringify({ name: nameValue, email: emailValue, password: passwordValue })
           };
     
           fetch('/auth/register', requestOptions)
-          .then(res => res.json())
-          .then(data => {console.log(data.name + 'has been created')});
+          .then(res => {if(res.status === 200) navigate('/auth/login', {replace:true})})
+          .then(data => {
+              console.log(data.name + 'has been created')
+              setUser(data)  
+            });
 
           setnameValue("");
           setemailValue("");
@@ -26,7 +34,7 @@ const Register = () => {
     return (
         <>
         <h1>Register</h1>
-            <form >
+            
                 <div>
                     <label for="name">Name</label>
                     <input placeholder="Enter your name here" value={nameValue} onChange={(e) => setnameValue(e.target.value)}></input>
@@ -55,8 +63,8 @@ const Register = () => {
                 <label for="cbox2">Thriller</label>
             </div> */}
 
-            <button type="submit" onClick={() => {registerUser(nameValue, emailValue, passwordValue)}}>Login</button>
-            </form>
+            <button type="submit" onClick={registerUser}>Register</button>
+            
         </>
     )
 }

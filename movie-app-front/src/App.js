@@ -10,11 +10,16 @@ import Auth from './pages/Auth';
 import Movie from './pages/Movie'
 import NotFound from './pages/Notfound';
 import FavoritesMovies from './pages/Favorites';
+import UserContextProvider from './contexts/UserContext';
 
 function App() {
 
+  const defaultUser = {name:"Stranger", email: "stranger@gmail.com"}
+
   const [moviesList, setMoviesList] = useState([])
   const [initialML, setInitialML] = useState([])
+  const [userInfo, setUserInfo] = useState(defaultUser)
+  console.log(userInfo.name)
  
   function getMovies() {
     fetch('/movies')
@@ -34,18 +39,23 @@ useEffect( () => {getMovies()}, [])
     <div className="App">
           <Router>
             <main>
+            <UserContextProvider user={{userInfo, setUserInfo}}>
               <Routes>
                 <Route path="/" element={<Home moviesList={moviesList} setMoviesList={setMoviesList} initialMovieList={initialML}/>}/>
                 <Route path="/auth/*" element={<Auth />} >
                     <Route path="login" element={<Login/>} />
                     <Route path="register" element={<Register/>} />
+                    <Route path="logout" element={<Register/>} />
+                    {/* <Route path="*" element={<NotFound />}/> */}
                 </Route>
                 <Route path="movies/:movieId" element={<Movie moviesList={moviesList} setMoviesList={setMoviesList}  />} />
                 <Route path="favorites" element={<FavoritesMovies />} />
                 <Route path="*" element={<NotFound />}/>
               </Routes>
+              </UserContextProvider> 
             </main>
           </Router>
+     
 
     </div>
   );

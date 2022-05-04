@@ -5,11 +5,12 @@ const MovieTile = ({item, handler}) => {
     
     return (
         <div className="movieTile">
-            <NavLink to={`/movies/${item.title}`}>
+            
             <div className="imgContainer">
             <img src={item.poster} alt={item.title} />
-            <Button text={<i className="iconFav" class="fa-solid fa-star"></i>} />
+            <Button text={<div className="iconFav"><i  className="fa-solid fa-star"></i></div>} />
             </div>
+            <NavLink to={`/movies/${item.title}`}>
             <p className="title"> {item.title} </p>
             </NavLink>
             

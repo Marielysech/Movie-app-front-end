@@ -1,8 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import {useUserContext, UserContext} from '../contexts/UserContext'
 
 const Intro = () => {
 
 const [movieQuotes, setMQuotes] = useState("")
+
+const userInfo = useUserContext()
+console.log('this is the intro var' + userInfo)
 
 // const options = {
 // 	method: 'GET',
@@ -19,7 +23,9 @@ const [movieQuotes, setMQuotes] = useState("")
 // 	.catch(err => console.error(err));
 
     return (
-        <div className='introContainer'>            <div><h2 className='introText'>Install yourself, pick a movie, go watch it and <em>enjoy</em></h2></div>
+        <div className='introContainer'>            <div>
+            {userInfo.userInfo.name !== "Stranger" && <h2 className='introText'>Hello {userInfo.name}</h2>} 
+            <h2 className='introText'>Install yourself, pick a movie, go watch it and <em>enjoy</em></h2></div>
         </div>
     )
 }
