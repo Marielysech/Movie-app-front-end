@@ -24,7 +24,7 @@ console.log('this is the intro var' + userInfo)
 
     return (
         <div className='introContainer'>            <div>
-            {userInfo.userInfo.name !== "Stranger" && <h2 className='introText'>Hello {userInfo.name}</h2>} 
+            {userInfo.userInfo.name ? <h2 className='introText'>Hello {userInfo.userInfo.name}</h2> : null} 
             <h2 className='introText'>Install yourself, pick a movie, go watch it and <em>enjoy</em></h2></div>
         </div>
     )

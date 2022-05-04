@@ -25,7 +25,7 @@ const Login = () => {
             // if(res.status === 200) navigate('/', {replace:true})})
           .then(data => {
             console.log(data)
-            // user.setUser({name: data.name, email:data.email})
+            user.setUserInfo({name: data.name, email:data.email})
             setemailValue("")
             setpasswordValue("")
         })
