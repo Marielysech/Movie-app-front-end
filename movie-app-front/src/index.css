@@ -26,6 +26,7 @@ code {
   flex-direction: row;
   justify-content: space-between;
   border: 0.5px solid black;
+  align-items: baseline;
 }
 
 .navBar span {
@@ -275,6 +276,7 @@ height: 50%;
 .imgContainer button:hover {
   background-color: white;
   color: #F5AA7C;
+  border: 1px solid #F5AA7C;
 }
 
 /* .iconFav {
@@ -286,3 +288,18 @@ height: 50%;
   color: rgb(37, 2, 119);
   border: 1px solid black;
 } */
+
+.favRedirect i {
+  margin: 0 0.2rem;
+}
+
+.favRedirect {
+  border: 1px solid black;
+  padding: .2rem 0.5rem;
+  margin: 0 1rem;
+  border-radius: 20px;
+}
+
+.userLinkContainer {
+  padding: 1rem;
+}

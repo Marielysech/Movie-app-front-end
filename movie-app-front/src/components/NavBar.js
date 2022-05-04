@@ -10,8 +10,10 @@ const NavBar = () => {
 
           <span><NavLink to='/' ><i class="fa-solid fa-house"></i></NavLink></span>
           <span><NavLink className='homeRedirect' to='/' >Movie Finder</NavLink></span>
-          <span><NavLink className="auth" to="/auth/login" ><i class="fa-solid fa-arrow-right-to-bracket"></i></NavLink>
-          <NavLink className="auth" to="/auth/register"><i class="fa-solid fa-circle-plus"></i></NavLink></span>
+          <div className='userLinkContainer'>
+            <NavLink className="favRedirect" to="/favorites"><i class="fa-solid fa-star"></i>Favorites</NavLink>
+          <NavLink className="auth" to="/auth/login" ><i class="fa-solid fa-arrow-right-to-bracket"></i></NavLink>
+          <NavLink className="auth" to="/auth/register"><i class="fa-solid fa-circle-plus"></i></NavLink></div>
 
 {/*           
           <span><a href="http://localhost:3000/" className="homeRedirect"><i class="fa-solid fa-house"></i></a></span>

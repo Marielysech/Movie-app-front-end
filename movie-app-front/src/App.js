@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Auth from './pages/Auth';
 import Movie from './pages/Movie'
 import NotFound from './pages/Notfound';
-import FavoritesMovies from './pages/Notfound';
+import FavoritesMovies from './pages/Favorites';
 
 function App() {
 

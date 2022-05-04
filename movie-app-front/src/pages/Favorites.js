@@ -1,33 +1,37 @@
 import Footer from "../components/Footer";
+import React, {useState, useEffect} from 'react'
 import MovieTile from "../components/MovieTile";
 import NavBar from "../components/NavBar";
 
 const FavoritesMovies = () => {
 
-    const removeFromFav = (id) => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            //TODO : adapt  with backend var
-            body: JSON.stringify({ id: id })
-          };
-    
-          //TODO adapt fecth link
-          fetch(`/tasks/remove/${id}`, requestOptions)
-          .then(res => res.json())
-          .then(data => {console.log(data.tasks)});
-          getTasks('/tasks')
+    const [favList, setfavList] = useState([])
+    const [initialFavList, setinitialFavList] = useState([])
+
+
+
+    function getFav() {
+        fetch('/users/favorites')
+        .then(response => response.json())
+        .then(data => {
+          const movies= data.movies
+          setfavList(movies) 
+          setinitialFavList(movies) 
+        })
+        .catch(err => console.log(err))
+      
     }
+
+    useEffect( () => {getFav()}, [])
+    console.log(favList)
+
 
     return (
         <>
             <NavBar />
-            <MovieTile />
-            <Button
-                color="red"
-                text="delete task"
-                handler={() => removeFromFav(item._id)}
-            />
+            <h2 className="introText">Favorites Movies</h2>
+            {favList.length > 0 ?
+            <MovieTile moviesList={favList} setMoviesList={setfavList} initialMovieList={initialFavList}/> : <p>You don't have any favorites yet !</p> }
             <Footer />
         
         </>
