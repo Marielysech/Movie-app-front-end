@@ -25,7 +25,7 @@ const userInfo = useUserContext()
     return (
         <div className='introContainer'>            
             <div>
-                {userInfo.userInfo.name ? <h2 className='introText'>Hello {userInfo.userInfo.name}</h2> : null} 
+                {userInfo.userInfo.name !== "Stranger" ? <h2 className='introText'>Hello {userInfo.userInfo.name}</h2> : null} 
                 <h2 className='introText'>Install yourself, pick a movie, go watch it and <em>enjoy</em></h2>
             </div>
         </div>

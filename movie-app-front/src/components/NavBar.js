@@ -25,7 +25,7 @@ const NavBar = () => {
     fetch('/auth/logout', requestOptions)
     .then(res => console.log('user disconnected'))
     navigate('/', {replace:true})
-    userInfo.setUserInfo({name: "", email: ""})
+    userInfo.setUserInfo({name:"Stranger", email: "stranger@gmail.com"})
   }
 
   return (
