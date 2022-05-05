@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
-export const UserContext = React.createContext();
-const value="contextValue"
+export const UserContext = React.createContext({});
 
 const UserContextProvider = ({children, user}) => {
   return (

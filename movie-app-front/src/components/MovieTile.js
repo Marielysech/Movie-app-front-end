@@ -1,11 +1,9 @@
 import { NavLink } from "react-router-dom"
 import Button from "./Button"
-import React, {useState, useContext} from 'react'
-import {useFavContext, FavContext} from '../contexts/FavContext'
 
 
 const MovieTile = ({item, handler}) => {
-    const getFav = useFavContext()
+    let favButtonClassName = ""
 
     const addToFav = (event) => {
         event.preventDefault()
@@ -17,10 +15,10 @@ const MovieTile = ({item, handler}) => {
 
     fetch(`/users/favorites/${item.title}`, requestOptions)
         .then(res =>res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            data.title ? favButtonClassName="iconFavAdded" : favButtonClassName="iconFav"
+        })
         .catch(error => console.log(error))
-    getFav()
-    
 } 
 
     return (
@@ -28,7 +26,7 @@ const MovieTile = ({item, handler}) => {
             
             <div className="imgContainer">
             <img src={item.poster} alt={item.title} />
-            <Button onClick={addToFav} text={<div className="iconFav"><i  className="fa-solid fa-star"></i></div>} />
+            <Button onClick={addToFav} className={favButtonClassName} text={<div><i  className="fa-solid fa-star"></i></div>} />
             </div>
             <NavLink to={`/movies/${item.title}`}>
             <p className="title"> {item.title} </p>

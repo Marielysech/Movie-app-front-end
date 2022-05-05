@@ -10,6 +10,7 @@ import Movie from './pages/Movie'
 import NotFound from './pages/Notfound';
 import FavoritesMovies from './pages/Favorites';
 import UserContextProvider from './contexts/UserContext';
+import RequireAuth from './contexts/RequireAuth';
 
 function App() {
 
@@ -48,7 +49,7 @@ useEffect( () => {getMovies()}, [])
                     {/* <Route path="*" element={<NotFound />}/> */}
                 </Route>
                 <Route path="movies/:movieId" element={<Movie moviesList={moviesList} setMoviesList={setMoviesList}  />} />
-                <Route path="favorites" element={<FavoritesMovies />} />
+                <Route path="favorites" element={<RequireAuth><FavoritesMovies /></RequireAuth>} />
                 <Route path="*" element={<NotFound />}/>
               </Routes>
             </main>

@@ -283,6 +283,27 @@ height: 50%;
   border: 1px solid #F5AA7C;
 }
 
+/* .iconFav button {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  color: rgb(254, 254, 254);
+  font-size: 16px;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.iconFav button:hover {
+  background-color: white;
+  color: #F5AA7C;
+  border: 1px solid #F5AA7C;
+} */
+
+
 /* .iconFav {
   color: yellow;
   border: 1px solid black;

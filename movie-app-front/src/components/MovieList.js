@@ -33,8 +33,6 @@ const MovieList = ({moviesList, setMoviesList, initialMovieList}) => {
 
         }  //filtering per years
         const yearSearch = initialMovieList.filter(item => item.year === valueSearchCapital)
-        console.log('this is year' + yearSearch)
-
         yearSearch.length > 0 && setMoviesList(yearSearch)
         setValue('')
     }

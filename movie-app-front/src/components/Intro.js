@@ -6,7 +6,7 @@ const Intro = () => {
 const [movieQuotes, setMQuotes] = useState("")
 
 const userInfo = useUserContext()
-console.log('this is the intro var' + userInfo)
+// console.log('this is the intro var' + userInfo)
 
 // const options = {
 // 	method: 'GET',
@@ -23,9 +23,11 @@ console.log('this is the intro var' + userInfo)
 // 	.catch(err => console.error(err));
 
     return (
-        <div className='introContainer'>            <div>
-            {userInfo.userInfo.name ? <h2 className='introText'>Hello {userInfo.userInfo.name}</h2> : null} 
-            <h2 className='introText'>Install yourself, pick a movie, go watch it and <em>enjoy</em></h2></div>
+        <div className='introContainer'>            
+            <div>
+                {userInfo.userInfo.name ? <h2 className='introText'>Hello {userInfo.userInfo.name}</h2> : null} 
+                <h2 className='introText'>Install yourself, pick a movie, go watch it and <em>enjoy</em></h2>
+            </div>
         </div>
     )
 }
