@@ -11,7 +11,7 @@ return (
     <>  
         <form className="searchForm">
              <input 
-                placeholder="Search movies here..." 
+                placeholder="Search by movies title or category" 
                 value={value}               
                 onChange={captureInputSearch}
             ></input>

@@ -1,6 +1,7 @@
 import {NavLink, useNavigate} from 'react-router-dom'
 import React, {useState, useContext} from 'react'
 import {useUserContext, UserContext} from '../contexts/UserContext'
+import Button from './Button'
 
 
 
@@ -33,14 +34,13 @@ const NavBar = () => {
 
           <span><NavLink to='/' ><i className="fa-solid fa-house"></i></NavLink></span>
 
-          <span><NavLink className='homeRedirect' to='/' >Movie Finder</NavLink></span>
           
           <div className='userLinkContainer'>
             {userInfo.userInfo.name !== "Stranger" ? 
-            <div>
+            <div className='buttonCtnLogged'>
             <NavLink className="favRedirect" to="/favorites"><i className="fa-solid fa-star"></i>Favorites</NavLink>
-            <button onClick={logout} className="favRedirect" >Logout</button>
-            </div> :
+            <NavLink onClick={logout} className="favRedirect" to="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</NavLink>
+            </div> : 
             <div>
               <NavLink className="auth" to="/auth/login" ><i className="fa-solid fa-arrow-right-to-bracket"></i></NavLink>
               <NavLink className="auth" to="/auth/register"><i className="fa-solid fa-circle-plus"></i></NavLink> 
