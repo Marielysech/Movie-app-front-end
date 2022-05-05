@@ -1,12 +1,32 @@
-import {NavLink} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
 import React, {useState, useContext} from 'react'
 import {useUserContext, UserContext} from '../contexts/UserContext'
+
 
 
 const NavBar = () => {
 
   const userInfo = useUserContext()
-  //TO DO: LOGIN COMPONENT  {/* <Login /> */}
+  const navigate = useNavigate();
+
+  //TO DO: LOGOUT COMPONENT  {/* <Login /> */}
+
+  const logout = (event) => {
+
+    event.preventDefault();
+
+    const requestOptions = {
+        method: 'GET',
+        credentials: "include",
+        headers: { 'Content-Type': 'application/json'},
+    
+      };
+
+    fetch('/auth/logout', requestOptions)
+    .then(res => console.log('user disconnected'))
+    navigate('/', {replace:true})
+    userInfo.setUserInfo({name: "", email: ""})
+  }
 
   return (
       <div className="navBar">
@@ -19,7 +39,7 @@ const NavBar = () => {
             {userInfo.userInfo.name !== "Stranger" ? 
             <div>
             <NavLink className="favRedirect" to="/favorites"><i className="fa-solid fa-star"></i>Favorites</NavLink>
-            <NavLink className="favRedirect" to="/auth/logout">Logout</NavLink>
+            <button onClick={logout} className="favRedirect" >Logout</button>
             </div> :
             <div>
               <NavLink className="auth" to="/auth/login" ><i className="fa-solid fa-arrow-right-to-bracket"></i></NavLink>

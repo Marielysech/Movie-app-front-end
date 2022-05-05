@@ -19,12 +19,9 @@ const Register = () => {
     
           fetch('/auth/register', requestOptions)
           .then(res => {if(res.status === 200) navigate('/auth/login', {replace:true})})
-          .then(data => {
-              console.log(data.name + 'has been created')
               setnameValue("");
               setemailValue("");
-              setpasswordValue("");
-            })
+              setpasswordValue("")
           .catch(error => console.log(error))
           event.preventDefault();
   
@@ -37,16 +34,15 @@ const Register = () => {
             
                 <div>
                     <label for="name">Name</label>
-                    <input placeholder="Enter your name here" value={nameValue} onChange={(e) => setnameValue(e.target.value)}></input>
+                    <input type="text" placeholder="Enter your name here" value={nameValue} onChange={(e) => setnameValue(e.target.value)}></input>
                 </div>
-                <p>N:{nameValue}   E:{emailValue}  PS:{passwordValue}</p>
                 <div>
                     <label >Email</label>
-                    <input placeholder="Enter your email here" value={emailValue} onChange={(e) => setemailValue(e.target.value)}></input>
+                    <input type="email" placeholder="Enter your email here" value={emailValue} onChange={(e) => setemailValue(e.target.value)}></input>
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input placeholder="Enter your password here" value={passwordValue} onChange={(e) => setpasswordValue(e.target.value)}></input>
+                    <input type='password' placeholder="Enter your password here" value={passwordValue} onChange={(e) => setpasswordValue(e.target.value)}></input>
                 </div>
             {/* <div>
                 <p>Choose your favorites genre</p>

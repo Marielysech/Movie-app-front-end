@@ -18,7 +18,7 @@ function App() {
   const [moviesList, setMoviesList] = useState([])
   const [initialML, setInitialML] = useState([])
   const [userInfo, setUserInfo] = useState(defaultUser)
-  console.log(userInfo.name)
+  // console.log(userInfo.name)
  
   function getMovies() {
     fetch('/movies')
