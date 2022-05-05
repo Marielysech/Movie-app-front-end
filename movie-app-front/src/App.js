@@ -49,7 +49,10 @@ useEffect( () => {getMovies()}, [])
                     {/* <Route path="*" element={<NotFound />}/> */}
                 </Route>
                 <Route path="movies/:movieId" element={<Movie moviesList={moviesList} setMoviesList={setMoviesList}  />} />
-                <Route path="favorites" element={<RequireAuth><FavoritesMovies /></RequireAuth>} />
+                <Route path="favorites" element={
+                      <RequireAuth> 
+                        <FavoritesMovies />
+                      </RequireAuth>} />
                 <Route path="*" element={<NotFound />}/>
               </Routes>
             </main>
