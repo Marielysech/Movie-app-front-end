@@ -24,6 +24,7 @@ This <strong>Movie App</strong> allows user to create their account to explore e
 * Adding movies to favorites
 * Searching movies through names, categories or years
 * Accessing all movies from one category
+* Responsive design
 ----------------
 
 ### Snippet
